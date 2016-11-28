@@ -33,7 +33,7 @@ public class StockPriceScheduledTask {
         this.tickers = Arrays.asList(tickers.split(","));
     }
 
-    @Scheduled(fixedRate = 15000)
+    @Scheduled(fixedRate = 5000)
     public void getPrices() {
         logger.debug("Getting latest prices now");
         List<Stock> stockPrices = stockService.getPrices(tickers);

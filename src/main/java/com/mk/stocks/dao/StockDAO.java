@@ -6,6 +6,7 @@ import com.mk.stocks.entity.Stock;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.URL;
 
 /**
@@ -23,6 +24,7 @@ public class StockDAO {
         try {
             URL url = new URL(STOCK_URL + ticker);
             stock = mapper.readValue(url, Stock.class);
+            //stock.setPrice(new BigDecimal(Math.random()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
